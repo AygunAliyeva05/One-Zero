@@ -1,0 +1,227 @@
+#root {
+  max-width: 1028px;
+  margin: 0 auto;
+  // padding: 2rem;
+  // text-align: center;
+}
+
+h6 {
+  //styleName: 18/Semi Bold;
+  // font-family: Inter;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  color: black;
+}
+
+.menu {
+  margin: 22px 0px 28px;
+}
+.desserts {
+  margin: 24px 0px 16px;
+}
+.Categories {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  display: flex; /* Butonları yatay sıraya dizmek için */
+  overflow-x: auto; /* Yatay taşan elemanlar için scroll özelliği */
+  white-space: nowrap; /* Butonların tek satırda kalmasını sağlamak */
+  -ms-overflow-style: none; /* Internet Explorer ve Edge için scrollbar gizleme */
+  scrollbar-width: none; /* Firefox için scrollbar gizleme */
+  
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari ve diğer WebKit tarayıcıları için scrollbar gizleme */
+  }
+  
+  button {
+    // font-family: Inter;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    text-align: center;
+    // height: 34px;
+    flex-shrink: 0; /* Butonların küçülmesini engelle */
+    // padding: 10px;
+    // margin: 0 5px;
+  }
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  @media screen and (max-width: 743px){
+    justify-content: space-around;
+
+  }
+  .cardd {
+    transition: 0.3s all;
+
+    cursor: pointer;
+    position: relative;
+    width: 176px;
+    height: 106px;
+    border-radius: 8px;
+    border: 2px solid #f8f8f8;
+    img {
+      width: 100%;
+      height: 64px;
+      object-fit: cover;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .title {
+      margin-left: 8px;
+      color: black;
+      // font-family: Inter;
+      width: 160px;
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 14px;
+      text-align: left;
+    }
+    .price {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 65px;
+      height: 21px;
+      border-radius: 4px;
+      color: black;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 14.52px;
+      text-align: center;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .cardd:hover{
+    transform: scale(1.02);
+    transition: 0.5s all;
+    box-shadow: rgba(0, 0, 0, 0.10) 0px 3px 8px;
+
+  }
+}
+
+.detail{
+
+  width: 358px;
+  height: 211px;
+  border-radius: 8px;
+  border: 1px solid #EFEDED;
+  display: flex;
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  
+  .image{
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+  .text{
+    padding-left: 13px;
+    .buritto{
+
+      //styleName: 14/Medium;
+  // font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: left;
+  margin: 10px 0px 6px;
+  // margin: 0;
+    }
+
+    .fast{
+      // font-family: Inter;
+font-size: 10px;
+font-weight: 400;
+line-height: 12.1px;
+text-align: left;
+color: #8D8D8D;
+margin-bottom: 10px;
+margin-top: 0;
+
+    }
+    .price{
+      // font-family: Inter;
+font-size: 12px;
+font-weight: 600;
+line-height: 14.52px;
+text-align: left;
+margin-bottom: 26px;
+
+    }
+
+    .count{
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      p{
+font-size: 14.4px;
+font-weight: 400;
+line-height: 17.43px;
+text-align: left;
+margin: 0;
+
+      }
+      .minus{
+        width: 30px;
+        height: 30px;
+        border-radius: 6px;
+        background: #F7F7F7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+      }
+    }
+
+    .line{
+      border: 1px solid var(--Light-mode-Stroke-Gray, #EFEDED)
+    }
+
+    ul{
+      padding-left: 14px;
+font-size: 10px;
+font-weight: 400;
+line-height: 14px;
+text-align: left;
+color: #8D8D8D;
+
+
+    }
+
+  }
+  .cancel{
+    margin-left: 9px;
+    margin-top: 6px;
+    svg{
+      cursor: pointer;
+      transform: rotate(45deg);
+      color: #8D8D8D;
+      
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
