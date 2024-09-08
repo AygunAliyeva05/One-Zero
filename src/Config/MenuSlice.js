@@ -2,7 +2,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   menu: [],
-  status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
+  filterMenu: [],
+  status: 'idle',
   error: null
 };
 
@@ -15,7 +16,11 @@ export const fetchMenu = createAsyncThunk('menu/fetchMenu', async () => {
 const MenuSlice = createSlice({
   name: 'menuitem',
   initialState,
-  reducers: {},
+  reducers: {
+    setFilterMenu: (state, action) => {
+      state.filterMenu = action.payload;
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchMenu.pending, (state) => {
@@ -24,6 +29,7 @@ const MenuSlice = createSlice({
       .addCase(fetchMenu.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.menu = action.payload; 
+        state.filterMenu = action.payload;
       })
       .addCase(fetchMenu.rejected, (state, action) => {
         state.status = 'failed';
@@ -32,4 +38,5 @@ const MenuSlice = createSlice({
   },
 });
 
+export const { setFilterMenu } = MenuSlice.actions;
 export default MenuSlice.reducer;
